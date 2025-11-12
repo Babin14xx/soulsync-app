@@ -1,41 +1,8 @@
-<<<<<<< HEAD
-name: Firebase Hosting CI
-=======
 name: Deploy Angular to Firebase Hosting
->>>>>>> b9d41f9c06cf4b4c939016ca74fefdb710223f3d
 
 on:
   push:
     branches:
-<<<<<<< HEAD
-      - main  # Run when you push to the main branch
-
-jobs:
-  build_and_deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3  # Get your code
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build Angular app
-        run: npm run build -- --prod  # Builds your dist/soulsync-app folder
-
-      - name: Deploy to Firebase Hosting
-        uses: FirebaseExtended/action-hosting-deploy@v1
-        with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
-          channelId: live
-          projectId: "soulsync-15c75"
-=======
       - main  # deploy when main branch is updated
 
 jobs:
@@ -68,4 +35,3 @@ jobs:
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" # Secret with Firebase JSON
           channelId: live
           projectId: soulsync-15c75
->>>>>>> b9d41f9c06cf4b4c939016ca74fefdb710223f3d
