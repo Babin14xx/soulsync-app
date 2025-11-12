@@ -19,30 +19,23 @@ jobs:
         with:
           node-version: 20
 
-      # 3️⃣ Install Angular CLI
-      - name: Install Angular CLI
-        run: npm install -g @angular/cli
-
-      # 4️⃣ Install project dependencies
+      # 3️⃣ Install npm packages
       - name: Install npm packages
         run: npm ci
 
+      # 4️⃣ Install Angular CLI globally
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
+
       # 5️⃣ Build Angular app
       - name: Build Angular app
-        run: ng build --configuration production --output-path=dist
+        run: ng build --configuration production --output-path=dist/soulsync-app
 
       # 6️⃣ Deploy to Firebase
       - name: Deploy to Firebase
-        uses: FirebaseExtended/action-hosting-deploy@v1
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
           channelId: live
           projectId: soulsync-15c75
-
-      # 7️⃣ Set custom domain (optional step)
-      - name: Set Firebase Custom Domain
-        run: |
-          npx firebase hosting:sites:update soulsync-15c75 --domain soulsync.world
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
