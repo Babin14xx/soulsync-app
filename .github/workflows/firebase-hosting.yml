@@ -3,7 +3,7 @@ name: Deploy Angular to Firebase Hosting
 on:
   push:
     branches:
-      - main  # deploy when main branch is updated
+      - main  # Run when main branch is updated
 
 jobs:
   build-and-deploy:
@@ -31,7 +31,7 @@ jobs:
       - name: Deploy to Firebase
         uses: FirebaseExtended/action-hosting-deploy@v1
         with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"                    # GitHub token
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" # Secret with Firebase JSON
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"                  # GitHub token
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" # Firebase service account JSON
           channelId: live
           projectId: soulsync-15c75
