@@ -1,0 +1,105 @@
+/* Container: center content */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Auth Card (Login/Register) */
+.auth-card {
+  background: rgba(255, 255, 255, 0.9);      /* Glass effect */
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 400px;
+  min-width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.auth-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Headings */
+.auth-card h2 {
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+  font-size: 26px;
+}
+
+/* Inputs */
+.auth-card input[type="email"],
+.auth-card input[type="password"] {
+  width: 100%;
+  padding: 14px 1px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+.auth-card input:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 8px rgba(106,17,203,0.4);
+  outline: none;
+}
+
+/* Buttons */
+.auth-card button {
+  width: 100%;
+  padding: 14px 0;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.auth-card button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(37,117,252,0.4);
+}
+
+/* Links */
+.auth-card .auth-link a {
+  color: #2575fc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.auth-card .auth-link a:hover {
+  color: #6a11cb;
+}
+
+/* Responsive */
+.auth-card input[type="email"],
+.auth-card input[type="password"] {
+  width: 100%;
+  padding: 14px 1px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+
+  /* Center text */
+  text-align: center;
+}
+
+/* Placeholder text also centered */
+.auth-card input::placeholder {
+  text-align: center;
+  color: #999;
+}

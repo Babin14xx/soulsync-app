@@ -1,0 +1,49 @@
+[debug] [2025-11-12T12:11:03.489Z] ----------------------------------------------------------------------
+[debug] [2025-11-12T12:11:03.492Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\babin\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2025-11-12T12:11:03.492Z] CLI Version:   14.24.2
+[debug] [2025-11-12T12:11:03.492Z] Platform:      win32
+[debug] [2025-11-12T12:11:03.493Z] Node Version:  v24.10.0
+[debug] [2025-11-12T12:11:03.493Z] Time:          Wed Nov 12 2025 17:41:03 GMT+0530 (India Standard Time)
+[debug] [2025-11-12T12:11:03.493Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\New folder\soulsync-app
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] 
+[debug] [2025-11-12T12:11:18.987Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-11-12T12:11:18.987Z] > authorizing via signed-in user (babinbabin44@gmail.com)
+[debug] [2025-11-12T12:11:18.988Z] Checked if tokens are valid: true, expires at: 1762951489474
+[debug] [2025-11-12T12:11:18.988Z] Checked if tokens are valid: true, expires at: 1762951489474
+[debug] [2025-11-12T12:11:18.990Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/soulsync-15c75 [none]
+[debug] [2025-11-12T12:11:19.580Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/soulsync-15c75 200
+[debug] [2025-11-12T12:11:19.580Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/soulsync-15c75 {"projectId":"soulsync-15c75","projectNumber":"262153271215","displayName":"SoulSync","name":"projects/soulsync-15c75","resources":{"hostingSite":"soulsync-15c75"},"state":"ACTIVE","etag":"1_dd83658c-5688-4f0e-929c-257a2e676e1f"}
+[info] i  Using project soulsync-15c75 (SoulSync) . 
+[info] 
+=== Hosting Setup
+[debug] [2025-11-12T12:11:19.589Z] Checked if tokens are valid: true, expires at: 1762951489474
+[debug] [2025-11-12T12:11:19.589Z] Checked if tokens are valid: true, expires at: 1762951489474
+[debug] [2025-11-12T12:11:19.589Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/soulsync-15c75 [none]
+[debug] [2025-11-12T12:11:19.939Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/soulsync-15c75 200
+[debug] [2025-11-12T12:11:19.939Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/soulsync-15c75 {"projectId":"soulsync-15c75","projectNumber":"262153271215","displayName":"SoulSync","name":"projects/soulsync-15c75","resources":{"hostingSite":"soulsync-15c75"},"state":"ACTIVE","etag":"1_dd83658c-5688-4f0e-929c-257a2e676e1f"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
