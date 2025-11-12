@@ -24,13 +24,17 @@ jobs:
       - name: Install npm packages
         run: npm ci
 
+      # 3.1️⃣ Install Angular CLI globally
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
+
       # 4️⃣ Build Angular app
       - name: Build Angular
         run: ng build soulsync-app --configuration production --output-path=dist/soulsync-app
 
       # 5️⃣ Deploy to Firebase Hosting
       - name: Deploy to Firebase
-        uses: FirebaseExtended/action-hosting-deploy@v0   # Updated version to a valid one :contentReference[oaicite:1]{index=1}
+        uses: FirebaseExtended/action-hosting-deploy@v0  # Use valid tag
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"                   # GitHub token
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"  # Firebase JSON secret
