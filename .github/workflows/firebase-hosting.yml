@@ -29,9 +29,9 @@ jobs:
 
       # 5️⃣ Deploy to Firebase Hosting
       - name: Deploy to Firebase
-        uses: FirebaseExtended/action-hosting-deploy@v1.2.1
+        uses: FirebaseExtended/action-hosting-deploy@v1
         with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"          # GitHub token
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"                    # GitHub token
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" # Secret with Firebase JSON
           channelId: live
           projectId: soulsync-15c75
