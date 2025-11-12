@@ -1,5 +1,4 @@
 name: Deploy Angular to Firebase Hosting
-
 on:
   push:
     branches:
@@ -10,24 +9,40 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # 2️⃣ Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
+      # 3️⃣ Install Angular CLI
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
+
+      # 4️⃣ Install project dependencies
       - name: Install npm packages
         run: npm ci
 
+      # 5️⃣ Build Angular app
       - name: Build Angular app
-        run: ng build soulsync-app --configuration production --output-path=dist/soulsync-app
+        run: ng build --configuration production --output-path=dist
 
+      # 6️⃣ Deploy to Firebase
       - name: Deploy to Firebase
-        uses: FirebaseExtended/action-hosting-deploy@v0
+        uses: FirebaseExtended/action-hosting-deploy@v1
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
           channelId: live
           projectId: soulsync-15c75
+
+      # 7️⃣ Set custom domain (optional step)
+      - name: Set Firebase Custom Domain
+        run: |
+          npx firebase hosting:sites:update soulsync-15c75 --domain soulsync.world
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
