@@ -3,7 +3,7 @@ name: Deploy Angular to Firebase Hosting
 on:
   push:
     branches:
-      - main  # Run when main branch is updated
+      - main  # deploy when main branch is updated
 
 jobs:
   build-and-deploy:
