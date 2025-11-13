@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Firestore, collection, addDoc, collectionData } from '@angular/fire/firestore';
-import { Storage, ref, uploadBytes } from '@angular/fire/storage';
+import { Storage, ref, uploadBytes, getDownloadURL } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 
 export interface Lead {
@@ -8,7 +8,7 @@ export interface Lead {
   email: string;
   phone: number;
   address: string;
-  picture?: string;
+  picture?: string; // will store download URL
 }
 
 @Injectable({
@@ -19,13 +19,16 @@ export class LeadService {
 
   async addLead(lead: Lead, file?: File) {
     if (file) {
-      const storageRef = ref(this.storage, `addleads/${file.name}`);
+      const storageRef = ref(this.storage, `addleads/${Date.now()}_${file.name}`);
       await uploadBytes(storageRef, file);
-      lead.picture = file.name; // store filename in Firestore
+      // Get real download URL
+      lead.picture = await getDownloadURL(storageRef);
     }
 
     const leadsRef = collection(this.firestore, 'addleads');
-    return addDoc(leadsRef, lead);
+    const docRef = await addDoc(leadsRef, lead);
+    console.log('Lead saved with ID:', docRef.id);
+    return docRef;
   }
 
   getLeads(): Observable<Lead[]> {
