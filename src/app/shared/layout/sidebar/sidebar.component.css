@@ -1,0 +1,37 @@
+aside {
+  position: fixed;
+  top: 60px; /* header height */
+  left: 0;
+  width: 220px;
+  height: calc(100% - 70px);
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+  z-index: 500;
+}
+
+aside button {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+aside button:hover {
+  transform: translateX(5px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(37,117,252,0.4);
+}
+
+@media screen and (max-width: 768px) {
+  aside { transform: translateX(-100%); }
+  aside.active { transform: translateX(0); z-index: 999; }
+}

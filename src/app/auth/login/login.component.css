@@ -1,4 +1,4 @@
-/* Full page container */
+/* ---------- FULL PAGE ---------- */
 .auth-container {
   display: flex;
   justify-content: center;
@@ -11,16 +11,16 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* Auth Card */
+/* ---------- AUTH CARD ---------- */
 .auth-card {
-  background: rgba(255, 255, 255, 0.9);      /* Glass effect */
+  background: rgba(255, 255, 255, 0.9);   /* Glass effect */
   backdrop-filter: blur(12px);
   border-radius: 20px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
   padding: 40px 30px;
   width: 100%;
-  max-width: 400px;     /* Balanced width for desktop */
-  min-width: 280px;     /* Ensures card isn’t too small on mobile */
+  max-width: 400px;
+  min-width: 280px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -29,7 +29,7 @@
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
-/* Heading */
+/* ---------- HEADING ---------- */
 .auth-card h2 {
   font-weight: 700;
   color: #1a1a1a;
@@ -37,7 +37,7 @@
   font-size: 26px;
 }
 
-/* Inputs */
+/* ---------- INPUTS ---------- */
 .auth-card input[type="email"],
 .auth-card input[type="password"] {
   width: 100%;
@@ -47,14 +47,21 @@
   border-radius: 12px;
   font-size: 16px;
   transition: all 0.3s ease;
+  text-align: center;
 }
+
 .auth-card input:focus {
   border-color: #6a11cb;
   box-shadow: 0 0 8px rgba(106,17,203,0.4);
   outline: none;
 }
 
-/* Button */
+.auth-card input::placeholder {
+  text-align: center;
+  color: #999;
+}
+
+/* ---------- BUTTON ---------- */
 .auth-card button {
   width: 100%;
   padding: 14px 0;
@@ -72,7 +79,7 @@
   box-shadow: 0 10px 25px rgba(37,117,252,0.4);
 }
 
-/* Links */
+/* ---------- LINKS ---------- */
 .auth-card .auth-link a {
   color: #2575fc;
   text-decoration: none;
@@ -83,23 +90,18 @@
   color: #6a11cb;
 }
 
-/* Responsive adjustments */
-.auth-card input[type="email"],
-.auth-card input[type="password"] {
-  width: 100%;
-  padding: 14px 1px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-
-  /* Center text */
-  text-align: center;
-}
-
-/* Placeholder text also centered */
-.auth-card input::placeholder {
-  text-align: center;
-  color: #999;
+/* ---------- RESPONSIVE ---------- */
+@media screen and (max-width: 480px) {
+  .auth-card {
+    padding: 30px 20px;
+  }
+  .auth-card h2 {
+    font-size: 22px;
+  }
+  .auth-card input[type="email"],
+  .auth-card input[type="password"],
+  .auth-card button {
+    font-size: 14px;
+    padding: 12px 0;
+  }
 }

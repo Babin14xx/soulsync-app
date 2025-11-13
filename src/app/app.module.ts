@@ -11,12 +11,17 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideStorage, getStorage } from '@angular/fire/storage';
+import { SharedModule } from './shared/shared.module';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    DashboardComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -26,6 +31,8 @@ import { provideStorage, getStorage } from '@angular/fire/storage';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
+    SharedModule, // ✅ header, footer, sidebar included
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

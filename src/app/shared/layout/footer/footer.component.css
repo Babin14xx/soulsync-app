@@ -1,0 +1,29 @@
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  font-weight: 500;
+  z-index: 1000;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+}
+
+footer button {
+  margin-left: 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+footer button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(37,117,252,0.4);
+}
