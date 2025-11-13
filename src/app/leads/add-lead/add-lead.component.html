@@ -1,0 +1,22 @@
+<div class="add-lead-container">
+  <div class="add-lead-card">
+    <h2>Add Lead</h2>
+
+    <form [formGroup]="leadForm" (ngSubmit)="submitLead()">
+      <input type="text" formControlName="name" placeholder="Name">
+      <input type="email" formControlName="email" placeholder="Email">
+      <input type="number" formControlName="phone" placeholder="Phone">
+      <input type="text" formControlName="address" placeholder="Address">
+
+      <!-- File Input -->
+      <div class="file-input-wrapper">
+        <input type="file" (change)="onFileSelected($event)" id="fileInput">
+        <label for="fileInput" class="file-label">
+          <span>{{ selectedFileName || 'Select Picture' }}</span>
+        </label>
+      </div>
+
+      <button type="submit" [disabled]="leadForm.invalid">Add Lead</button>
+    </form>
+  </div>
+</div>

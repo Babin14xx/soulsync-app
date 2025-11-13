@@ -4,6 +4,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
+import { LeadsModule } from '../leads/leads.module';
 
 
 
@@ -15,7 +16,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-        RouterModule.forRoot([]) // add your routes here
+    RouterModule.forRoot([]) // add your routes here
 
   ],
   exports: [ // ✅ MUST export so other modules can use them

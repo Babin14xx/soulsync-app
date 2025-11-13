@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -13,6 +13,9 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { SharedModule } from './shared/shared.module';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { AddLeadComponent } from './leads/add-lead/add-lead.component';
+import { LeadListComponent } from './leads/lead-list/lead-list.component';
+import { LeadsModule } from './leads/leads.module';
 
 
 @NgModule({
@@ -21,6 +24,8 @@ import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
+    AddLeadComponent,
+    LeadListComponent,
    
   ],
   imports: [
@@ -31,7 +36,9 @@ import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
-    SharedModule, // ✅ header, footer, sidebar included
+    SharedModule,
+    LeadsModule,
+    ReactiveFormsModule,
     
   ],
   providers: [],
